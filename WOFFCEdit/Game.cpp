@@ -7,6 +7,10 @@
 #include "DisplayObject.h"
 #include <string>
 
+#include "CameraController.h"
+#include "ObjectController.h"
+
+
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -19,39 +23,13 @@ Game::Game()
     m_deviceResources = std::make_unique<DX::DeviceResources>();
     m_deviceResources->RegisterDeviceNotify(this);
 	m_displayList.clear();
+    cam = std::make_unique<CameraController>();
 	
 	//initial Settings
 	//modes
 	m_grid = false;
 
-	//functional
-	m_movespeed = 0.30;
-	m_camRotRate = 3.0;
-
-	//camera
-	m_camPosition.x = 0.0f;
-	m_camPosition.y = 3.7f;
-	m_camPosition.z = -3.5f;
-
-	m_camOrientation.x = 0;
-	m_camOrientation.y = 0;
-	m_camOrientation.z = 0;
-
-	m_camLookAt.x = 0.0f;
-	m_camLookAt.y = 0.0f;
-	m_camLookAt.z = 0.0f;
-
-	m_camLookDirection.x = 0.0f;
-	m_camLookDirection.y = 0.0f;
-	m_camLookDirection.z = 0.0f;
-
-	m_camRight.x = 0.0f;
-	m_camRight.y = 0.0f;
-	m_camRight.z = 0.0f;
-
-	m_camOrientation.x = 0.0f;
-	m_camOrientation.y = 0.0f;
-	m_camOrientation.z = 0.0f;
+	
 
 }
 
@@ -83,6 +61,8 @@ void Game::Initialize(HWND window, int width, int height)
 
     m_deviceResources->CreateWindowSizeDependentResources();
     CreateWindowSizeDependentResources();
+    ObjectController::Instance().Init(&m_displayList, m_deviceResources);
+   
 
 #ifdef DXTK_AUDIO
     // Create DirectXTK for Audio objects
@@ -106,6 +86,7 @@ void Game::Initialize(HWND window, int width, int height)
     m_effect1->Play(true);
     m_effect2->Play();
 #endif
+    GetClientRect(window, &ScreenDimensions);
 }
 
 void Game::SetGridState(bool state)
@@ -142,53 +123,14 @@ void Game::Update(DX::StepTimer const& timer)
 {
 	//TODO  any more complex than this, and the camera should be abstracted out to somewhere else
 	//camera motion is on a plane, so kill the 7 component of the look direction
-	Vector3 planarMotionVector = m_camLookDirection;
-	planarMotionVector.y = 0.0;
+    cam->Update(m_InputCommands);
+    ObjectController::Instance().Update(m_InputCommands);
+   
+	
 
-	if (m_InputCommands.rotRight)
-	{
-		m_camOrientation.y -= m_camRotRate;
-	}
-	if (m_InputCommands.rotLeft)
-	{
-		m_camOrientation.y += m_camRotRate;
-	}
-
-	//create look direction from Euler angles in m_camOrientation
-	m_camLookDirection.x = sin((m_camOrientation.y)*3.1415 / 180);
-	m_camLookDirection.z = cos((m_camOrientation.y)*3.1415 / 180);
-	m_camLookDirection.Normalize();
-
-	//create right vector from look Direction
-	m_camLookDirection.Cross(Vector3::UnitY, m_camRight);
-
-	//process input and update stuff
-	if (m_InputCommands.forward)
-	{	
-		m_camPosition += m_camLookDirection*m_movespeed;
-	}
-	if (m_InputCommands.back)
-	{
-		m_camPosition -= m_camLookDirection*m_movespeed;
-	}
-	if (m_InputCommands.right)
-	{
-		m_camPosition += m_camRight*m_movespeed;
-	}
-	if (m_InputCommands.left)
-	{
-		m_camPosition -= m_camRight*m_movespeed;
-	}
-
-	//update lookat point
-	m_camLookAt = m_camPosition + m_camLookDirection;
-
-	//apply camera vectors
-    m_view = Matrix::CreateLookAt(m_camPosition, m_camLookAt, Vector3::UnitY);
-
-    m_batchEffect->SetView(m_view);
+    m_batchEffect->SetView(cam->GetViewMatrix());
     m_batchEffect->SetWorld(Matrix::Identity);
-	m_displayChunk.m_terrainEffect->SetView(m_view);
+	m_displayChunk.m_terrainEffect->SetView(cam->GetViewMatrix());
 	m_displayChunk.m_terrainEffect->SetWorld(Matrix::Identity);
 
 #ifdef DXTK_AUDIO
@@ -220,6 +162,73 @@ void Game::Update(DX::StepTimer const& timer)
 }
 #pragma endregion
 
+int Game::MousePicking() 
+{
+    int selectedID = -1;
+    float pickedDist = 0;
+
+    float closestDist = 200;
+
+    const XMVECTOR nearSource = XMVectorSet(m_InputCommands.mouseX, m_InputCommands.mouseY, 0.0f, 1.0f);
+    const XMVECTOR farSource = XMVectorSet(m_InputCommands.mouseX, m_InputCommands.mouseY, 1.0f, 1.0f);
+
+    for (int i = 0; i < m_displayList.size(); i++) 
+    {
+        const XMVECTORF32 scale = { m_displayList[i].m_scale.x, m_displayList[i].m_scale.y, m_displayList[i].m_scale.z };
+        const XMVECTORF32 translate = { m_displayList[i].m_position.x, m_displayList[i].m_position.y, m_displayList[i].m_position.z };
+
+        XMVECTOR rotate = Quaternion::CreateFromYawPitchRoll(m_displayList[i].m_orientation.y * 3.1415 / 180, m_displayList[i].m_orientation.x * 3.1415 / 180, m_displayList[i].m_orientation.z * 3.1415 / 180);
+
+        XMMATRIX local = m_world * XMMatrixTransformation(g_XMZero, Quaternion::Identity, scale, g_XMZero, rotate, translate);
+
+        XMVECTOR nearPoint = XMVector3Unproject(nearSource, 0.0f, 0.0f, ScreenDimensions.right, ScreenDimensions.bottom, m_deviceResources->GetScreenViewport().MinDepth, m_deviceResources->GetScreenViewport().MaxDepth, m_projection, cam->GetViewMatrix(), local);
+
+        XMVECTOR FarPoint = XMVector3Unproject(farSource, 0.0f, 0.0f, ScreenDimensions.right, ScreenDimensions.bottom, m_deviceResources->GetScreenViewport().MinDepth, m_deviceResources->GetScreenViewport().MaxDepth, m_projection, cam->GetViewMatrix(), local);
+
+        XMVECTOR pickingVector = FarPoint - nearPoint;
+
+        pickingVector = XMVector3Normalize(pickingVector);
+
+        for (int y = 0; y < m_displayList[i].m_model.get()->meshes.size(); y++) 
+        {
+            if (m_displayList[i].m_model.get()->meshes[y]->boundingBox.Intersects(nearPoint, pickingVector, pickedDist)) 
+            {
+                if (pickedDist <= closestDist) 
+                {
+                    closestDist = pickedDist;
+                    selectedID = i;
+
+
+                    bool isDuplicate = false;
+                    if (!ObjectController::Instance().selectedObjs.empty()) 
+                    {
+                        isDuplicate = RemoveIntFromVector(ObjectController::Instance().selectedObjs, i);
+                    }
+
+                    if (selectedID != -1 && !isDuplicate) 
+                    {
+                        ObjectController::Instance().selectedObjs.push_back(selectedID);
+
+                        return selectedID;
+                    }
+
+                    if (selectedID != -1 && isDuplicate) 
+                    {
+                        ObjectController
+                    }
+                }
+            }
+        }
+
+    }
+    return selectedID;
+}
+
+void Game::FocusOnObj() 
+{
+
+}
+
 #pragma region Frame Render
 // Draws the scene.
 void Game::Render()
@@ -245,7 +254,7 @@ void Game::Render()
 	//CAMERA POSITION ON HUD
 	m_sprites->Begin();
 	WCHAR   Buffer[256];
-	std::wstring var = L"Cam X: " + std::to_wstring(m_camPosition.x) + L"Cam Z: " + std::to_wstring(m_camPosition.z);
+	std::wstring var = L"Cam X: " + std::to_wstring(cam->GetPos().x) + L"Cam Z: " + std::to_wstring(cam->GetPos().z);
 	m_font->DrawString(m_sprites.get(), var.c_str() , XMFLOAT2(100, 10), Colors::Yellow);
 	m_sprites->End();
 
@@ -264,7 +273,7 @@ void Game::Render()
 
 		XMMATRIX local = m_world * XMMatrixTransformation(g_XMZero, Quaternion::Identity, scale, g_XMZero, rotate, translate);
 
-		m_displayList[i].m_model->Draw(context, *m_states, local, m_view, m_projection, false);	//last variable in draw,  make TRUE for wireframe
+		m_displayList[i].m_model->Draw(context, *m_states, local, cam->GetViewMatrix(), m_projection, false);	//last variable in draw,  make TRUE for wireframe
 
 		m_deviceResources->PIXEndEvent();
 	}
@@ -459,6 +468,7 @@ void Game::BuildDisplayList(std::vector<SceneObject> * SceneGraph)
 		newDisplayObject.m_light_linear		= SceneGraph->at(i).light_linear;
 		newDisplayObject.m_light_quadratic	= SceneGraph->at(i).light_quadratic;
 		
+        newDisplayObject.m_ID = i;
 		m_displayList.push_back(newDisplayObject);
 		
 	}

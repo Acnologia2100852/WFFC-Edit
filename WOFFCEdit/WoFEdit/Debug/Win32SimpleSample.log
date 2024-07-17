@@ -1,0 +1,15 @@
+﻿  Game.cpp
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(172,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(177,202): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(177,153): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(177,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(181,113): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(181,89): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(183,111): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(183,87): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(189,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(246,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(245,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(244,97): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Game.cpp(230,10): warning C4101: 'Buffer': unreferenced local variable
+  Win32SimpleSample.vcxproj -> C:\Users\mince\Documents\GitHub\WFFC-Edit\WOFFCEdit\Debug\WoFEdit.exe

@@ -2,6 +2,7 @@
 #include "resource.h"
 #include <vector>
 #include <sstream>
+#include "CameraController.h"
 
 //
 //ToolMain Class
@@ -287,6 +288,11 @@ void ToolMain::Tick(MSG *msg)
 		//add to scenegraph
 		//resend scenegraph to Direct X renderer
 
+	if (m_toolInputCommands.LMB) {
+		m_selectedObject = m_d3dRenderer.MousePicking();
+		m_toolInputCommands.LMB = false;
+	}
+
 	//Renderer Update Call
 	m_d3dRenderer.Tick(&m_toolInputCommands);
 }
@@ -306,10 +312,13 @@ void ToolMain::UpdateInput(MSG * msg)
 		break;
 
 	case WM_MOUSEMOVE:
+		m_toolInputCommands.mouseX = GET_X_LPARAM(msg->lParam);
+		m_toolInputCommands.mouseY = GET_Y_LPARAM(msg->lParam);
 		break;
 
 	case WM_LBUTTONDOWN:	//mouse button down,  you will probably need to check when its up too
 		//set some flag for the mouse button in inputcommands
+		m_toolInputCommands.LMB = true;
 		break;
 
 	}
@@ -350,4 +359,10 @@ void ToolMain::UpdateInput(MSG * msg)
 	else m_toolInputCommands.rotLeft = false;
 
 	//WASD
+
+
+	if(m_keyArray['F'])
+	{
+		m_d3dRenderer.cam.get()->FocusCam(m_toolInputCommands, m_selectedObject, )
+	}
 }
