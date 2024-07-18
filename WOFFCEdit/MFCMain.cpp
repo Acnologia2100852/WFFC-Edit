@@ -1,5 +1,6 @@
 #include "MFCMain.h"
 #include "resource.h"
+#include "ObjectController.h"
 
 
 BEGIN_MESSAGE_MAP(MFCMain, CWinApp)
@@ -69,8 +70,9 @@ int MFCMain::Run()
 		}
 		else
 		{	
-			int ID = m_ToolSystem.getCurrentSelectionID();
-			std::wstring statusString = L"Selected Object: " + std::to_wstring(ID);
+			std::wstring selectedObjString;
+			selectedObjString = VecToWString(ObjectController::Instance().selectedObjs);
+			std::wstring statusString = selectedObjString;
 			m_ToolSystem.Tick(&msg);
 
 			//send current object ID to status bar in The main frame
@@ -100,13 +102,45 @@ void MFCMain::MenuEditSelect()
 	//modeless dialogue must be declared in the class.   If we do local it will go out of scope instantly and destroy itself
 	m_ToolSelectDialogue.Create(IDD_DIALOG1);	//Start up modeless
 	m_ToolSelectDialogue.ShowWindow(SW_SHOW);	//show modeless
-	m_ToolSelectDialogue.SetObjectData(&m_ToolSystem.m_sceneGraph, &m_ToolSystem.m_selectedObject);
+	
+	if (m_ToolSystem.m_selectedObject != nullptr) 
+	{
+		m_ToolSelectDialogue.SetObjectData(&m_ToolSystem.m_sceneGraph);
+	}
+	else 
+	{
+	
+	}
+
 }
 
 void MFCMain::ToolBarButton1()
 {
 	
 	m_ToolSystem.onActionSave();
+}
+
+
+//Prints the Id of the selected Objects 
+std::wstring MFCMain::VecToWString(const std::vector<int>& vec)
+{
+	std::wstringstream ss;
+
+	ss << L"Objects selected are: ";
+
+	for (int i = 0; i < vec.size(); ++i) 
+	{
+		ss << vec[i];
+
+		//If its not the last selected object add a comma
+		if (i < vec.size() - 1) 
+		{
+			ss << L",";
+
+		}
+	}
+	return ss.str();
+
 }
 
 

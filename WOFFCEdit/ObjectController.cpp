@@ -20,9 +20,13 @@ void ObjectController::Update(InputCommands& inputComs)
 
 	if (!selectedObjs.empty()) 
 	{
+		//Loop through all objects, if selected move according to user input
 		for (int i = 0; i < allDisplayObjs->size(); ++i) 
 		{
-			
+			if(std::find(selectedObjs.begin(), selectedObjs.end(), i) != selectedObjs.end())
+			{
+				if(inputComs.)
+			}
 		}
 	}
 

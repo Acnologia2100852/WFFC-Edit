@@ -214,7 +214,7 @@ int Game::MousePicking()
 
                     if (selectedID != -1 && isDuplicate) 
                     {
-                        ObjectController
+                        ObjectController::Instance().RemoveTexture(i);
                     }
                 }
             }
@@ -226,7 +226,7 @@ int Game::MousePicking()
 
 void Game::FocusOnObj() 
 {
-
+    cam->FocusCam(ObjectController::Instance().GetLastDisplayObject().m_position);
 }
 
 #pragma region Frame Render

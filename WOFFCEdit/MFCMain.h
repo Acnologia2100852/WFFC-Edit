@@ -10,6 +10,8 @@
 #include "MFCFrame.h"
 #include "SelectDialogue.h"
 
+#include <sstream>
+
 
 class MFCMain : public CWinApp 
 {
@@ -36,6 +38,7 @@ private:
 	afx_msg void MenuEditSelect();
 	afx_msg	void ToolBarButton1();
 
+	std::wstring VecToWString(const std::vector<int>& vec);
 
 	DECLARE_MESSAGE_MAP()	// required macro for message map functionality  One per class
 };

@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "SelectDialogue.h"
+#include "ObjectController.h"
 
 // SelectDialogue dialog
 
@@ -32,17 +33,19 @@ SelectDialogue::~SelectDialogue()
 }
 
 ///pass through pointers to the data in the tool we want to manipulate
-void SelectDialogue::SetObjectData(std::vector<SceneObject>* SceneGraph, int * selection)
+void SelectDialogue::SetObjectData(std::vector<SceneObject>* SceneGraph)
 {
 	m_sceneGraph = SceneGraph;
-	m_currentSelection = selection;
+	
 
 	//roll through all the objects in the scene graph and put an entry for each in the listbox
-	int numSceneObjects = m_sceneGraph->size();
+	int numSceneObjects = ObjectController::Instance().GetDisplayObjects()->size();
 	for (int i = 0; i < numSceneObjects; i++)
 	{
 		//easily possible to make the data string presented more complex. showing other columns.
-		std::wstring listBoxEntry = std::to_wstring(m_sceneGraph->at(i).ID);
+
+		int id = ((*ObjectController::Instance().GetDisplayObjects())[i].m_ID);
+		std::wstring listBoxEntry = std::to_wstring(id);
 		m_listBox.AddString(listBoxEntry.c_str());
 	}
 }
@@ -56,6 +59,7 @@ void SelectDialogue::DoDataExchange(CDataExchange* pDX)
 
 void SelectDialogue::End()
 {
+	ObjectController::Instance().isEditing = false;
 	DestroyWindow();	//destory the window properly.  INcluding the links and pointers created.  THis is so the dialogue can start again. 
 }
 
@@ -66,7 +70,29 @@ void SelectDialogue::Select()
 	
 	m_listBox.GetText(index, currentSelectionValue);
 
-	*m_currentSelection = _ttoi(currentSelectionValue);
+	m_currentSelection = _ttoi(currentSelectionValue);
+
+	if(std::find(ObjectController::Instance().selectedObjs.begin(), ObjectController::Instance().selectedObjs.end(), m_currentSelection) != ObjectController::Instance().selectedObjs.end())
+	{
+		bool isDuplicate = false;
+
+		if (!ObjectController::Instance().selectedObjs.empty()) 
+		{
+			isDuplicate = RemoveIntFromVector(ObjectController::Instance().selectedObjs, m_currentSelection);
+		}
+
+		if(m_currentSelection != -1 && !isDuplicate)
+		{
+			ObjectController::Instance().selectedObjs.push_back(m_currentSelection);
+
+			return;
+		}
+
+		if (m_currentSelection != -1 && isDuplicate) 
+		{
+			ObjectController::Instance().RemoveTexture(m_currentSelection);
+		}
+	}
 
 }
 
@@ -90,6 +116,7 @@ BOOL SelectDialogue::OnInitDialog()
 
 void SelectDialogue::PostNcDestroy()
 {
+	ObjectController::Instance().isEditing = false;
 }
 
 

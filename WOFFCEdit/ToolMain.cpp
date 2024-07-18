@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 #include "CameraController.h"
+#include "ObjectController.h"
 
 //
 //ToolMain Class
@@ -20,6 +21,8 @@ ToolMain::ToolMain()
 	m_toolInputCommands.left		= false;
 	m_toolInputCommands.right		= false;
 	
+	mousePos = LPPOINT();
+	m_selectedObject = &ObjectController::Instance().selectedObjs;
 }
 
 
@@ -29,7 +32,7 @@ ToolMain::~ToolMain()
 }
 
 
-int ToolMain::getCurrentSelectionID()
+std::vector<int>* ToolMain::getCurrentSelectionID()
 {
 
 	return m_selectedObject;
@@ -288,10 +291,7 @@ void ToolMain::Tick(MSG *msg)
 		//add to scenegraph
 		//resend scenegraph to Direct X renderer
 
-	if (m_toolInputCommands.LMB) {
-		m_selectedObject = m_d3dRenderer.MousePicking();
-		m_toolInputCommands.LMB = false;
-	}
+	
 
 	//Renderer Update Call
 	m_d3dRenderer.Tick(&m_toolInputCommands);
@@ -319,6 +319,9 @@ void ToolMain::UpdateInput(MSG * msg)
 	case WM_LBUTTONDOWN:	//mouse button down,  you will probably need to check when its up too
 		//set some flag for the mouse button in inputcommands
 		m_toolInputCommands.LMB = true;
+		break;
+	case WM_LBUTTONUP:
+		m_toolInputCommands.LMB = false;
 		break;
 
 	}
@@ -361,8 +364,21 @@ void ToolMain::UpdateInput(MSG * msg)
 	//WASD
 
 
+
+
 	if(m_keyArray['F'])
 	{
-		m_d3dRenderer.cam.get()->FocusCam(m_toolInputCommands, m_selectedObject, )
+		m_d3dRenderer.FocusOnObj();
+		m_keyArray['F'] = false;
+	}
+
+
+	if (m_toolInputCommands.LMB) 
+	{
+		if(!ObjectController::Instance().isEditing)
+		{
+			m_d3dRenderer.MousePicking();
+		}
+		m_toolInputCommands.LMB = false;
 	}
 }

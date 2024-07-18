@@ -25,7 +25,7 @@ public:
 
 	void Init(std::vector<DisplayObject>* startingObjs, const std::shared_ptr<DX::DeviceResources>& deviceResources);
 	void Update(InputCommands& inputComs);
-	std::vector<DisplayObject>* getDisplayObjects() { return allDisplayObjs; }
+	std::vector<DisplayObject>* GetDisplayObjects() { return allDisplayObjs; }
 
 	static bool IsInstanceMade() { return isInstanceMade; }
 
