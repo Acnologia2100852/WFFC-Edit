@@ -36,7 +36,7 @@ public:
 	DisplayObject GetLastDisplayObject();
 	DisplayObject GetObject(int id);
 	void SetDisplayObject(const DisplayObject& newObjectParam);
-	void Undo();
+	void NewObject();
 
 
 	bool isEditing = false;

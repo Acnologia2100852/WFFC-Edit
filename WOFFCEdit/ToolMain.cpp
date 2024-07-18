@@ -324,6 +324,13 @@ void ToolMain::UpdateInput(MSG * msg)
 		m_toolInputCommands.LMB = false;
 		break;
 
+	case WM_RBUTTONDOWN:
+		m_toolInputCommands.RMB = true;
+		break;
+	case WM_RBUTTONUP:
+		m_toolInputCommands.RMB = false;
+		break;
+
 	}
 	//here we update all the actual app functionality that we want.  This information will either be used int toolmain, or sent down to the renderer (Camera movement etc
 	//WASD movement
@@ -363,7 +370,11 @@ void ToolMain::UpdateInput(MSG * msg)
 
 	//WASD
 
-
+	if(m_keyArray['G'])
+	{
+		ObjectController::Instance().NewObject();
+		m_keyArray['G'] = false;
+	}
 
 
 	if(m_keyArray['F'])
@@ -380,5 +391,35 @@ void ToolMain::UpdateInput(MSG * msg)
 			m_d3dRenderer.MousePicking();
 		}
 		m_toolInputCommands.LMB = false;
+	}
+
+
+	//Object Movement
+
+	if(!ObjectController::Instance().isEditing)
+	{
+		if(m_keyArray[37])
+		{
+			m_toolInputCommands.leftArrow = true;
+		}
+		else m_toolInputCommands.leftArrow = false;
+
+		if (m_keyArray[38])
+		{
+			m_toolInputCommands.upArrow = true;
+		}
+		else m_toolInputCommands.upArrow = false;
+
+		if (m_keyArray[39])
+		{
+			m_toolInputCommands.rightArrow = true;
+		}
+		else m_toolInputCommands.rightArrow = false;
+
+		if (m_keyArray[40])
+		{
+			m_toolInputCommands.downArrow = true;
+		}
+		else m_toolInputCommands.downArrow = false;
 	}
 }

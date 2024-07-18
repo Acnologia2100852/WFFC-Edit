@@ -209,6 +209,7 @@ int Game::MousePicking()
                     {
                         ObjectController::Instance().selectedObjs.push_back(selectedID);
 
+
                         return selectedID;
                     }
 

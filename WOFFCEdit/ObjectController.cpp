@@ -25,7 +25,25 @@ void ObjectController::Update(InputCommands& inputComs)
 		{
 			if(std::find(selectedObjs.begin(), selectedObjs.end(), i) != selectedObjs.end())
 			{
-				if(inputComs.)
+				if (inputComs.upArrow) 
+				{
+					(*allDisplayObjs)[i].m_position.x += 0.1f;
+				}
+
+				if (inputComs.downArrow) 
+				{
+					(*allDisplayObjs)[i].m_position.x -= 0.1f;
+				}
+
+				if(inputComs.rightArrow)
+				{
+					(*allDisplayObjs)[i].m_position.z += 0.1f;
+				}
+
+				if(inputComs.leftArrow)
+				{
+					(*allDisplayObjs)[i].m_position.z -= 0.1f;
+				}
 			}
 		}
 	}
@@ -104,9 +122,39 @@ void ObjectController::SetDisplayObject(const DisplayObject& newObjectParam)
 	}
 }
 
-void ObjectController::Undo()
+void ObjectController::NewObject()
 {
+
+	DisplayObject newObject;
+
+	newObject.m_model = (*allDisplayObjs)[0].m_model;
+
+	DirectX::CreateDDSTextureFromFile(deviceResource->GetD3DDevice(), L"database/data/placeholder.dds",
+		nullptr, &newObject.m_texture_diffuse);
+	newObject.m_model->UpdateEffects([&](DirectX::IEffect* effect)
+		{
+			const auto basicEffect = dynamic_cast<DirectX::BasicEffect*>(effect);
+			if(basicEffect)
+			{
+				basicEffect->SetTexture(newObject.m_texture_diffuse);
+			}
+		});
+
+	newObject.m_texture_diffuse = (*allDisplayObjs)[0].m_texture_diffuse;
+
+	newObject.m_position = Vector3(2, 2, 6);
+	newObject.m_scale = Vector3(1, 1, 1);
+	newObject.m_orientation = Vector3(0, 0, 0);
+
+	allDisplayObjs->push_back(newObject);
+	for(int i = 0; i < allDisplayObjs->size(); i++)
+	{
+		(*allDisplayObjs)[i].m_ID = i;
+	}
+
 }
+
+
 
 bool ObjectController::isInstanceMade = false;
 

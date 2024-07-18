@@ -19,6 +19,8 @@ void CameraController::Update(const InputCommands& inputCom)
 		camOrientation.y += camRotRate;
 	}
 
+	
+
 	camLookDirection.x = sin((camOrientation.y) * 3.1415 / 180);
 	camLookDirection.z = cos((camOrientation.y) * 3.1415 / 180);
 

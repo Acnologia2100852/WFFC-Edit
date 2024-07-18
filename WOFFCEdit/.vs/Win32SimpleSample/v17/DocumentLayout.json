@@ -3,44 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\InputCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:InputCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ObjectController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\MFCMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:MFCMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:SelectDialogue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ToolMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ToolMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\MFCMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:MFCMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:SelectDialogue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ObjectController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ToolMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ToolMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ToolMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ToolMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\MFCMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:MFCMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:ObjectController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\InputCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:InputCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:SelectDialogue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:SelectDialogue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:CameraController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|solutionrelative:CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD0BCFE9-F760-43EB-9C31-BBFD23F397D9}|Win32SimpleSample.vcxproj|C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -66,11 +66,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "SelectDialogue.cpp",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.cpp",
               "RelativeDocumentMoniker": "SelectDialogue.cpp",
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "SelectDialogue.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\SelectDialogue.h",
               "RelativeDocumentMoniker": "SelectDialogue.h",
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "MFCMain.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\MFCMain.h",
               "RelativeDocumentMoniker": "MFCMain.h",
@@ -115,7 +115,7 @@
               "RelativeDocumentMoniker": "MFCMain.cpp",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\MFCMain.cpp",
               "RelativeToolTip": "MFCMain.cpp",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAAG8AAAABAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAG8AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-17T19:53:57.975Z",
               "EditorCaption": ""
@@ -135,59 +135,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ToolMain.cpp",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ToolMain.cpp",
               "RelativeDocumentMoniker": "ToolMain.cpp",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ToolMain.cpp",
               "RelativeToolTip": "ToolMain.cpp",
-              "ViewState": "AQIAAAYBAAAAAAAAAAAUwCUBAAABAAAA",
+              "ViewState": "AQIAAFUBAAAAAAAAAAAAAHcBAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-09T00:43:12.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ObjectController.cpp",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.cpp",
               "RelativeDocumentMoniker": "ObjectController.cpp",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.cpp",
               "RelativeToolTip": "ObjectController.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-04T00:48:09.462Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ObjectController.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.h",
               "RelativeDocumentMoniker": "ObjectController.h",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\ObjectController.h",
               "RelativeToolTip": "ObjectController.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACAAAAAaAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACYAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-03T18:17:07.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.cpp",
               "RelativeDocumentMoniker": "Game.cpp",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.cpp",
               "RelativeToolTip": "Game.cpp",
-              "ViewState": "AQIAAMIAAAAAAAAAAAAUwOQAAABSAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAANIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-03T15:24:55.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\Game.h",
               "RelativeDocumentMoniker": "Game.h",
@@ -200,33 +200,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "InputCommands.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\InputCommands.h",
               "RelativeDocumentMoniker": "InputCommands.h",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\InputCommands.h",
               "RelativeToolTip": "InputCommands.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-02T16:42:37.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "CameraController.cpp",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.cpp",
               "RelativeDocumentMoniker": "CameraController.cpp",
               "ToolTip": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.cpp",
               "RelativeToolTip": "CameraController.cpp",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAADcAAAAmAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAAABUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-02T16:30:27.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CameraController.h",
               "DocumentMoniker": "C:\\Users\\mince\\Documents\\GitHub\\WFFC-Edit\\WOFFCEdit\\CameraController.h",
               "RelativeDocumentMoniker": "CameraController.h",

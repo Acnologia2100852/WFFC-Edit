@@ -17,8 +17,8 @@ struct InputCommands
 	bool LMB;
 	bool RMB;
 
-	bool up;
-	bool down;
-	bool left;
-	bool right;
+	bool upArrow;
+	bool downArrow;
+	bool leftArrow;
+	bool rightArrow;
 };

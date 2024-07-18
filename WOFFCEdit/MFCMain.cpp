@@ -109,7 +109,7 @@ void MFCMain::MenuEditSelect()
 	}
 	else 
 	{
-	
+		m_ToolSelectDialogue.SetObjectData(&m_ToolSystem.m_sceneGraph);
 	}
 
 }
